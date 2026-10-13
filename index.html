@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#8ccf54">
+<title>Meadow Egg Co.</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game">
+  <header class="hud">
+    <div class="logo"><span class="logo-mark"></span><div><b>MEADOW</b><small>EGG CO.</small></div></div>
+    <div class="cash"><span class="coin">¢</span><div><small>FARM CASH</small><strong id="cash">$120</strong></div><button id="plusCash" aria-label="Info">+</button></div>
+  </header>
+  <div class="top-stats">
+    <div class="pill"><i class="egg-dot"></i><span><small>EGGS / SEC</small><b id="rate">0</b></span></div>
+    <div class="pill"><i class="chicken-dot"></i><span><small>CHICKENS</small><b id="chickens">8</b></span></div>
+    <div class="pill"><i class="crate-dot"></i><span><small>EGGS SOLD</small><b id="sold">0</b></span></div>
+  </div>
+  <main class="world">
+    <canvas id="farm" aria-label="Isometric chicken farm"></canvas>
+    <div class="location-tag"><span class="pulse"></span> MEADOW FARM <small>LV. <b id="farmLevel">1</b></small></div>
+    <div class="mission"><span class="mission-icon">✦</span><div><b>Grow your farm</b><small>Upgrade a building to produce more!</small></div><span class="mission-arrow">›</span></div>
+    <div class="cash-float" id="floatText"></div>
+  </main>
+  <section class="bottom-panel">
+    <div class="panel-heading"><div><span class="eyebrow">FARM MANAGEMENT</span><h1>Build & improve</h1></div><div class="income"><small>INCOME</small><b id="income">$0/s</b></div></div>
+    <div class="upgrade-list">
+      <article class="upgrade" data-type="coop">
+        <div class="upgrade-art coop-art"><span class="tiny-roof"></span><span class="tiny-house"></span></div>
+        <div class="upgrade-copy"><b>Hen house</b><small>More space for chickens</small><span>LV. <b id="coopLevel">1</b> · +10 capacity</span></div>
+        <button class="upgrade-button" id="coopBuy"><b id="coopCost">$80</b><small>UPGRADE</small></button>
+      </article>
+      <article class="upgrade" data-type="feed">
+        <div class="upgrade-art feed-art"><span class="feed-sack"></span><span class="feed-grain">•••</span></div>
+        <div class="upgrade-copy"><b>Premium feed</b><small>Increase egg production</small><span>LV. <b id="feedLevel">1</b> · faster laying</span></div>
+        <button class="upgrade-button" id="feedBuy"><b id="feedCost">$100</b><small>UPGRADE</small></button>
+      </article>
+      <article class="upgrade" data-type="truck">
+        <div class="upgrade-art truck-art"><span class="mini-truck"><i></i></span></div>
+        <div class="upgrade-copy"><b>Delivery truck</b><small>Sell eggs faster</small><span>LV. <b id="truckLevel">1</b> · bigger loads</span></div>
+        <button class="upgrade-button" id="truckBuy"><b id="truckCost">$125</b><small>UPGRADE</small></button>
+      </article>
+    </div>
+    <div class="bottom-nav">
+      <button class="nav-item active" id="farmTab"><span class="nav-icon farm-icon"></span><b>Farm</b></button>
+      <button class="nav-item" id="researchTab"><span class="nav-icon research-icon">✧</span><b>Research</b></button>
+      <button class="nav-item" id="marketTab"><span class="nav-icon market-icon"></span><b>Market</b></button>
+      <button class="nav-item" id="statsTab"><span class="nav-icon stats-icon">▥</span><b>Stats</b></button>
+    </div>
+  </section>
+</div>
+<div class="toast" id="toast"></div>
+<script src="game.js"></script>
+</body>
+</html>
